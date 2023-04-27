@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to top left, #5e5b8e,#1a0a32);
+    background-repeat: cover;
+    color: white;
+  }
+  input {
+    margin-bottom: 5vh;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background-color:transparent;
+    outline: none;
+    color: white;
+    caret-color: white;
+  }
+  textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+#btn{
+    border-radius: 8px;
+    align-items: center;
+    border: none;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #e7e7e7; color: black;
+
+}

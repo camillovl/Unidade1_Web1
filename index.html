@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Formulario</title>
+  </head>
+  <body>   
+    <form id="my-form">
+      <fieldset>
+          <label id="name-label">Enter your full name:
+              <input id="name" type="text" placeholder="Type your full name" required />
+          </label><br>
+  
+          <label id="email-label">Enter your Email:
+              <input id="email" type="email" placeholder="Ex: youremailhere@hotmail.com" required />
+          </label><br>
+  
+          <label id="number-label">Enter your Age:
+              <input id="number" type="number" min="14" max="120" placeholder="Min14 & Max99" />
+          </label><br>
+  
+          <label>What describres you best ?
+              <select id="dropdown">
+                  <option name="option">Full Time Student</option>
+                  <option name="option">Working and studying</option>
+                  <option name="option">Just Working</option>
+                  <option name="option">Actually im doing nothing</option>
+                  <option name="option">Other</option>
+              </select>
+          </label>
+      </fieldset>
+  
+      <fieldset>
+          <p>Are you Enjoing your time in college ?
+              <label for="recommend"><input id="recommend" type="radio" value="0" name="asking">Yes, of Course</label>
+              <label for="recommend"><input id="maybe-recommend" type="radio" value="1" name="asking">Maybe </label>
+              <label for="recommend"> <input id="not recommend" type="radio" value="2" name="asking">Actually
+                  no</label>
+      </fieldset>
+  
+      <fieldset>
+          <label>
+              <p>What would u like to see improved in your college?(Mark more then one if necessary)</p>
+              <input type="checkbox" value="1" />Estructure
+              <input type="checkbox" value="2" />School Program
+              <input type="checkbox" value="3" />Wi-fi
+              <input type="checkbox" value="3" />The Professors
+          </label>
+  
+      </fieldset>
+      <br>
+      <label>Any comments or suggestions?
+          <br>
+          <textarea placeholder="Enter your comment here..."></textarea>
+      </label>
+      </fieldset>
+      <br>
+      <button id="btn" type="submit">Enviar</button>      
+      <br>   
+  </form>
+    <script>
+      const form = document.querySelector('#my-form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const response = await fetch('http://localhost:5555/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.text();
+        console.log(result);
+      });
+    </script>
+  </body>
+</html>
